@@ -3,5 +3,20 @@ from flask import render_template
 
 
 @app.route("/")
-def hello_world():
-    return render_template("index.html")
+@app.route("/index") 
+@app.route("/home")
+def index():
+    return render_template("index.html", login = False)
+
+
+@app.route("/login")
+def login():
+    return render_template("index.html", login = False)
+
+@app.route("/courses")
+def courses():
+    return render_template("index.html", login = False)
+
+@app.route("/register")
+def register():
+    return render_template("index.html", login = False)
